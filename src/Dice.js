@@ -3,15 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Dice.css'
 class Dice extends React.Component {
     render() {
+        let cls = `fas fa-dice-${this.props.face} dice`;
         return (
             <div>
-                <h1>Dice Game</h1>
-                <i className="fas fa-dice-one face"/>
+                <i className={cls}/>
             </div>
-        
         )
     }
-
 }
 
 export default Dice;
