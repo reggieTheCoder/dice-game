@@ -11,7 +11,8 @@ class RollDice extends Component {
 
     constructor(props){
         super(props)
-        this.state = { dice1: "one", dice2: "two", dice3: "five" }
+        // give state an initial value                             isRolling is initially set to false
+        this.state = { dice1: "one", dice2: "two", dice3: "five" , isRolling: false }
         this.roll = this.roll.bind(this);
     }
 
@@ -29,8 +30,12 @@ class RollDice extends Component {
             Math.floor(Math.random() * this.props.sides.length)
         ];
 
-        // set state with new rolls
-        this.setState({dice1:newDice1, dice2:newDice2, dice3:newDice3});
+        // set state with new rolls                                  //update the state of isRolling to true
+        this.setState({dice1:newDice1, dice2:newDice2, dice3:newDice3, isRolling: true});
+        // wait one second, then set rolling to false
+        setTimeout(() => {
+            this.setState({isRolling: false});
+        },1500);
     }
     render() {
         return (
@@ -40,7 +45,10 @@ class RollDice extends Component {
                 <Dice face={this.state.dice2}/>
                 <Dice face={this.state.dice3}/> 
                 </div>
-                <button onClick={this.roll}>Roll Dice!</button>
+                <button onClick={this.roll}>
+                {/* change the text to "Rolling..." on click */}
+                {this.state.isRolling ? "Rolling...." : "Roll Dice"}
+                </button>
             </div>
         )
     }
