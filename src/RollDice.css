@@ -1,8 +1,7 @@
 .RollDice {
     display: flex;
     flex-flow: column nowrap;
-    min-height: 100vh;
-    
+    min-height: 100vh;  
 }
 
 .dice-container {
@@ -11,9 +10,6 @@
     align-content: center;
     padding: 10%;
 }
-
-
-
 
 .RollDice button {
     align-self: center;

@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Dice.css'
 class Dice extends React.Component {
     render() {
-        let cls = `fas fa-dice-${this.props.face} dice`;
+        // let cls = `dice fas fa-dice-${this.props.face} `;
         return (
             <div>
-                <i className={cls}/>
+                {/* <i className={cls}  /> */}
+                <i className = {`dice fas fa-dice-${this.props.face} ${this.props.rolling? 'shaking' : ''}`} />
             </div>
         )
     }

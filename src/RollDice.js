@@ -41,11 +41,12 @@ class RollDice extends Component {
         return (
             <div className='RollDice'>
                 <div className="dice-container">
-                <Dice face={this.state.dice1}/>
-                <Dice face={this.state.dice2}/>
-                <Dice face={this.state.dice3}/> 
+                {/* dyamically set the face on the dice to state */}
+                <Dice face={this.state.dice1} rolling = {this.state.isRolling}/>
+                <Dice face={this.state.dice2} rolling = {this.state.isRolling}/>
+                <Dice face={this.state.dice3} rolling = {this.state.isRolling}/> 
                 </div>
-                <button onClick={this.roll}>
+                <button onClick={this.roll} disabled={this.isRolling}>
                 {/* change the text to "Rolling..." on click */}
                 {this.state.isRolling ? "Rolling...." : "Roll Dice"}
                 </button>
