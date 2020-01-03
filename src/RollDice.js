@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Dice from './Dice';
+import './RollDice.css';
 
 
 class RollDice extends Component {
@@ -29,14 +30,16 @@ class RollDice extends Component {
         ];
 
         // set state with new rolls
-        this.setState({dice1:newDice1, dice1:newDice2, dice3:newDice3});
+        this.setState({dice1:newDice1, dice2:newDice2, dice3:newDice3});
     }
     render() {
         return (
-            <div>
+            <div className='RollDice'>
+                <div className="dice-container">
                 <Dice face={this.state.dice1}/>
                 <Dice face={this.state.dice2}/>
                 <Dice face={this.state.dice3}/> 
+                </div>
                 <button onClick={this.roll}>Roll Dice!</button>
             </div>
         )
